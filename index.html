@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#DC2626" />
+    
+    <!-- SEO -->
+    <title>SET Solver - Find Sets Instantly with AI</title>
+    <meta name="description" content="Instantly find all valid SETs in the SET card game. Point your camera at the cards or upload a photo and let AI detect and solve the puzzle for you." />
+    <meta name="keywords" content="SET game, SET solver, SET card game, SET finder, card game solver, AI card detection, SET puzzle" />
+    <link rel="canonical" href="https://setsolver.app/" />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SET Solver - Find Sets Instantly with AI" />
+    <meta property="og:description" content="Point your camera at SET cards or upload a photo. AI instantly finds all valid SETs for you." />
+    <meta property="og:url" content="https://setsolver.app/" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SET Solver - Find Sets Instantly with AI" />
+    <meta name="twitter:description" content="Point your camera at SET cards or upload a photo. AI instantly finds all valid SETs for you." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- OpenCV.js for card detection (loads before React) -->
+    <script>
+      // Define Module before OpenCV loads
+      var Module = {
+        onRuntimeInitialized() {
+          console.log('OpenCV.js loaded');
+          window.dispatchEvent(new Event('opencv-loaded'));
+        }
+      };
+    </script>
+    <script async src="/opencv.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

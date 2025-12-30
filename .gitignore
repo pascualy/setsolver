@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+venv/
+.venv/
+*.pt
+*.pth
+
+# Keep ONNX models in public/models
+!public/models/*.onnx
+
+# Training outputs
+classifier/outputs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.tmp.driveupload/
+.tmp.drivedownload/
+
+# Node
+node_modules/
+.npm
+
+# Build outputs
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+classifier/*.executed.ipynb
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+detector
+
+.gitarchive
+
+scratch

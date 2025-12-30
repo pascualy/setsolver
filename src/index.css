@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  /* Support for notched devices */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #E31837; /* Set red */
+  /* Prevent pull-to-refresh and bouncing on mobile */
+  overscroll-behavior: none;
+}
+
+/* Safe area utilities */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Attention-grabbing animation for set button - sharp SET style */
+
+/* Rigid wave wiggle - like "the wave" with sharp edges */
+@keyframes set-found-wiggle {
+  0%, 100% {
+    border-radius: 50%;
+    transform: scale(1);
+  }
+  12.5% {
+    border-radius: 60% 40% 50% 50%;
+    transform: scale(1.05);
+  }
+  25% {
+    border-radius: 50% 60% 40% 50%;
+    transform: scale(1.02);
+  }
+  37.5% {
+    border-radius: 50% 50% 60% 40%;
+    transform: scale(1.05);
+  }
+  50% {
+    border-radius: 40% 50% 50% 60%;
+    transform: scale(1.02);
+  }
+  62.5% {
+    border-radius: 60% 50% 40% 50%;
+    transform: scale(1.05);
+  }
+  75% {
+    border-radius: 50% 40% 60% 50%;
+    transform: scale(1.02);
+  }
+  87.5% {
+    border-radius: 40% 60% 50% 50%;
+    transform: scale(1.05);
+  }
+}
+
+.animate-set-found {
+  animation: set-found-wiggle 0.8s linear infinite;
+}
